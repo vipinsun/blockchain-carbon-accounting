@@ -83,7 +83,7 @@ In order to run API in local mode, Paste following inside ``/etc/hosts`` file
 
 Otherwise, run:
 ```bash
-sh ./scripts/reset.sh && sh start.sh
+sh ./scripts/fabricNetwork.sh && sh start.sh
 ```
 
 7. Follow the instructions under **Steps to seed the Fabric database** to initialize the Fabric network with emissions data to pull from when recording emissions.
@@ -257,7 +257,7 @@ $ ./network.sh down
 To shut down and then reset everything:
 
 ```bash
-$ sh ./scripts/reset.sh
+$ sh ./scripts/fabricNetwork.sh
 ```
 
 ## Integrating with the Net Emissions Token Network integration 
@@ -308,6 +308,12 @@ $ cd ../net-emissions-token-network/
 $ npm install
 $ npx hardhat node --show-accounts
 ```
+
+If you are running the tests for the first time, run the test setup script after navigating to the `typescript_app` directory. This inserts mock data and configures the Vault server for testing.
+```bash
+$ npm run test:setup
+```
+
 When the network/API and the local Hardhat network have fully started, you can run the automated tests by navigating to the `typescript_app` directory and running the tests as:
 
 
